@@ -5,7 +5,9 @@
   #remote_user:
   
   vars:
-    - os_family: "Debian"
+    - supported_os_families:
+        - "Debian"
+        - "LinuxMint"
   
   vars_prompt:
     - name: "overwrite_git_files"
@@ -13,6 +15,9 @@
       private: no
            
   pre_tasks:
+    - fail: "os compatibility check"
+      when: ansible_os_family not in supported_os_families
+
     - name: update apt
       apt: update_cache=true
         
