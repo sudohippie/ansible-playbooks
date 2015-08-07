@@ -10,6 +10,7 @@
   vars_prompt:
     - name: "overwrite_git_files"
       prompt: "Overwrite ~/.git* files (yes or ENTER to skip)?"
+      private: no
            
   pre_tasks:
     - name: update apt
