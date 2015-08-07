@@ -1,0 +1,3 @@
+---
+- name: add .vimrc
+  copy: src=vim/vim.vimrc dest=/home/{{ ansible_env.SUDO_USER }}/.vimrc backup=yes
