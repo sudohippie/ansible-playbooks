@@ -1,0 +1,19 @@
+---
+- name: debian development tools
+  hosts: local
+  sudo: yes
+  #remote_user:
+  
+  vars:
+    - os_family: "Debian"
+  
+  vars_prompt:
+    - name: "overwrite_git_files"
+      prompt: "Overwrite ~/.git* files (yes/no)?"
+           
+  pre_tasks:
+    - name: update apt
+      apt: update_cache=true
+        
+  roles:
+    - deb-devel-tools

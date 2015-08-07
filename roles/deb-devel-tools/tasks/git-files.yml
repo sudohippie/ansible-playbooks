@@ -1,0 +1,6 @@
+---
+- name: add .gitconfig
+  copy: src=git.gitconfig dest=/home/{{ ansible_env.SUDO_USER }}/.gitconfig backup=yes
+
+- name: add .gitignore
+  copy: src=git.gitignore dest=/home/{{ ansible_env.SUDO_USER }}/.gitignore backup=yes

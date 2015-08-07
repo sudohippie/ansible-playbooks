@@ -1,0 +1,22 @@
+---
+- name: debian basic tools
+  hosts: local
+  sudo: yes
+  #remote_user: 
+  
+  vars:
+    - os_family: "Debian"
+  
+  vars_prompt:
+    - name: "overwrite_bashrc_files"
+      prompt: "Overwrite ~/.bash[rc _*] (yes/no)?"
+
+    - name: "overwrite_crypto_files"
+      prompt: "Overwrite deb-[encrypt decrypt] files (yes/no)?"
+
+  pre_tasks:
+   - name: update apt     
+     apt: update_cache=true
+        
+  roles:
+   - deb-basic-tools

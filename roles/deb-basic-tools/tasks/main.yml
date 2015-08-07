@@ -1,0 +1,8 @@
+---
+- include: basic.yml
+
+- include: bashrc-files.yml
+  when: overwrite_bashrc_files == "yes"
+
+- include: crypto-files.yml
+  when: overwrite_crypto_files == "yes"
