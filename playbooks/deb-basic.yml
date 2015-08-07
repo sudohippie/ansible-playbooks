@@ -9,10 +9,10 @@
   
   vars_prompt:
     - name: "overwrite_bashrc_files"
-      prompt: "Overwrite ~/.bash[rc _*] (yes/no)?"
+      prompt: "Overwrite ~/.bash[rc _*] (yes or ENTER to skip)?"
 
     - name: "overwrite_crypto_files"
-      prompt: "Overwrite deb-[encrypt decrypt] files (yes/no)?"
+      prompt: "Overwrite deb-[encrypt decrypt] files (yes or ENTER to skip)?"
 
   pre_tasks:
    - name: update apt     
