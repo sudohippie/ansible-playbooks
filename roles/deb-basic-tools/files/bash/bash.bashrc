@@ -135,7 +135,7 @@ fi
 } >/dev/null 2>/dev/null
 
 ##############################################
-		PERSONAL TOUCH
+#		PERSONAL TOUCH               #
 ##############################################
 
 # Prompt style
