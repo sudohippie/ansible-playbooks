@@ -1,2 +1,4 @@
 ---
-os_family: "Debian"
+overwrite_bashrc_files: "no"
+overwrite_crypto_files: "no"
+overwrite_vim_files: "no"

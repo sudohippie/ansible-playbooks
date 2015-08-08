@@ -7,4 +7,4 @@
 - include: crypto-files.yml
   when: overwrite_crypto_files == "yes"
 
-- include: vim-files.yml
+- include: vim.yml

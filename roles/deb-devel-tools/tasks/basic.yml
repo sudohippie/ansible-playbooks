@@ -5,4 +5,4 @@
           - tmux # terminal multiplexer
           - jq # json parser
           - wireshark
-          - git
+          - curl

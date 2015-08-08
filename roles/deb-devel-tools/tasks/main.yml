@@ -1,5 +1,4 @@
 ---
 - include: basic.yml
 
-- include: git-files.yml
-  when: overwrite_git_files== "yes"
+- include: git.yml
