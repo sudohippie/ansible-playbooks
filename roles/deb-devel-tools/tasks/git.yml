@@ -10,5 +10,5 @@
   copy: src=git/git.gitignore dest=/home/{{ ansible_env.SUDO_USER }}/.gitignore backup=yes
   when: overwrite_git_files == "yes"
 
-- name: add sudohippie-gitconfig
-  copy: src=git/git.sudohippie-gitconfig.sh dest=/usr/local/bin/sudohippie-gitconfig mode=a+x
+- name: add github-config
+  template: src=github-config.sh.j2 dest=/usr/local/bin/{{ github_alias }}-github-config mode=a+x
