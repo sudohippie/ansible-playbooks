@@ -3,9 +3,12 @@
   apt: pkg=git state=installed
 
 - name: add .gitconfig
-  copy: src=git.gitconfig dest=/home/{{ ansible_env.SUDO_USER }}/.gitconfig backup=yes
+  copy: src=git/git.gitconfig dest=/home/{{ ansible_env.SUDO_USER }}/.gitconfig backup=yes
   when: overwrite_git_files == "yes"
 
 - name: add .gitignore
-  copy: src=git.gitignore dest=/home/{{ ansible_env.SUDO_USER }}/.gitignore backup=yes
+  copy: src=git/git.gitignore dest=/home/{{ ansible_env.SUDO_USER }}/.gitignore backup=yes
   when: overwrite_git_files == "yes"
+
+- name: add sudohippie-gitconfig
+  copy: src=git/git.sudohippie-gitconfig dest=/usr/local/bin/sudohippie-gitconfig mode=a+x
