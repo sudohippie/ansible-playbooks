@@ -1,12 +1,12 @@
 ---
 - name: add .bash_exports
-  copy: src=bash/bash.bash_exports dest=/home/{{ ansible_env.SUDO_USER }}/.bash_exports backup=yes
+  copy: src=bash/bash.bash_exports dest=/home/{{ ansible_env.SUDO_USER }}/.bash_exports backup=yes owner={{ chown_owner }} group={{ chown_group }}
 
 - name: add .bash_aliases
-  copy: src=bash/bash.bash_aliases dest=/home/{{ ansible_env.SUDO_USER }}/.bash_aliases backup=yes
+  copy: src=bash/bash.bash_aliases dest=/home/{{ ansible_env.SUDO_USER }}/.bash_aliases backup=yes owner={{ chown_owner }} group={{ chown_group }}
 
 - name: add .bash_prompts
-  copy: src=bash/bash.bash_prompts dest=/home/{{ ansible_env.SUDO_USER }}/.bash_prompts backup=yes
+  copy: src=bash/bash.bash_prompts dest=/home/{{ ansible_env.SUDO_USER }}/.bash_prompts backup=yes owner={{ chown_owner }} group={{ chown_group }}
 
 - name: add .bashrc
-  copy: src=bash/bash.bashrc dest=/home/{{ ansible_env.SUDO_USER }}/.bashrc backup=yes
+  copy: src=bash/bash.bashrc dest=/home/{{ ansible_env.SUDO_USER }}/.bashrc backup=yes owner={{ chown_owner }} group={{ chown_group }}

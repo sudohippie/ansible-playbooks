@@ -1,3 +1,6 @@
 ---
 github_name: "Raghav Sidhanti"
 github_alias: "sudohippie"
+
+chown_owner: "{{ ansible_env.SUDO_USER }}"
+chown_group: "{{ ansible_env.SUDO_USER }}"
