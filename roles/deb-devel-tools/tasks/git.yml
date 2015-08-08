@@ -11,4 +11,4 @@
   when: overwrite_git_files == "yes"
 
 - name: add sudohippie-gitconfig
-  copy: src=git/git.sudohippie-gitconfig dest=/usr/local/bin/sudohippie-gitconfig mode=a+x
+  copy: src=git/git.sudohippie-gitconfig.sh dest=/usr/local/bin/sudohippie-gitconfig mode=a+x
