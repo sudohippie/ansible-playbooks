@@ -1,0 +1,14 @@
+---
+- name: download docker install script
+  get_url: url="{{ docker_url }}"
+          dest="{{ docker_dest }}"
+          validate_certs=no
+  register: download_status
+
+- name: change docker script mode
+  when: download_status|success
+  file: path="{{ docker_dest }}" mode=a+x
+
+- name: execute docker script
+  when: download_status|success
+  shell: "{{ docker_dest }} > {{ docker_log }}"

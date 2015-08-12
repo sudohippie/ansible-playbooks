@@ -1,1 +1,4 @@
 ---
+docker_url: "https://get.docker.com"
+docker_dest: "/tmp/get.docker"
+docker_log: "/tmp/get.docker.log"
