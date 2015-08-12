@@ -1,10 +1,23 @@
 ---
-- name: debian basic installs
+- name: debian basic tools
   hosts: local
   sudo: yes
-  tags: basic
+  tags:
+    - basic
+    - tools
+    - basic-tools
 
-        
+  roles:
+   - deb-basic-tools
+
+- name: debian basic files
+  hosts: local
+  sudo: yes
+  tags:
+    - basic
+    - files
+    - basic-files
+
   vars_prompt:
     - name: "overwrite_bashrc_files"
       prompt: "Overwrite ~/.bash[rc _*] (yes or ENTER to skip)?"
@@ -12,4 +25,4 @@
   
   roles:
    - deb-basic-files
-   - deb-basic-tools
+
