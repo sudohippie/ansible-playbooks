@@ -1,3 +1,6 @@
 ---
+local_user: "{{ ansible_env.SUDO_USER }}"
+local_group: "{{ ansible_env.SUDO_USER }}"
+
 github_name: "Raghav Sidhanti"
 github_alias: "sudohippie"
