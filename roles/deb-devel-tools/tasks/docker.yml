@@ -1,14 +1,23 @@
 ---
+- name: check if docker is installed
+  stat: path=/usr/bin/docker
+  register: tool
+
 - name: download docker install script
+  when: tool.stat.exists == False
   get_url: url="{{ docker_url }}"
           dest="{{ docker_dest }}"
           validate_certs=no
-  register: download_status
+  register: get_docker
 
 - name: change docker script mode
-  when: download_status|success
-  file: path="{{ docker_dest }}" mode=a+x
+  when: get_docker|changed
+  file: path="{{ docker_dest }}" owner={{ SUDO_USER }} group={{ SUDO_USER }} mode=a+x
 
 - name: execute docker script
-  when: download_status|success
+  when: get_docker|changed
   shell: "{{ docker_dest }} > {{ docker_log }}"
+
+- name: update sudoers file
+  when: get_docker|changed
+  script: docker/update_sudoers.sh
