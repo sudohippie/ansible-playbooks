@@ -1,0 +1,3 @@
+---
+- include: deb-basic.yml
+- include: deb-devel.yml

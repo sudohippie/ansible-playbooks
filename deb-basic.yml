@@ -1,0 +1,15 @@
+---
+- name: debian basic installs
+  hosts: local
+  sudo: yes
+  tags: basic
+
+        
+  vars_prompt:
+    - name: "overwrite_bashrc_files"
+      prompt: "Overwrite ~/.bash[rc _*] (yes or ENTER to skip)?"
+      private: no
+  
+  roles:
+   - deb-basic-files
+   - deb-basic-tools

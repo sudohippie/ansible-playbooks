@@ -1,0 +1,6 @@
+---
+- fail: "os compatibility check"
+  when: ansible_os_family not in supported_os_families
+
+- name: update apt 
+  apt: update_cache=true
