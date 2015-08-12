@@ -3,13 +3,12 @@
   apt: pkg=git state=installed
 
 - name: add .gitconfig
-  copy: src=git/git.gitconfig dest=/home/{{ ansible_env.SUDO_USER }}/.gitconfig backup=yes owner={{ chown_owner }} group={{ chown_group }}
+  copy: src=git/git.gitconfig dest=/home/{{ ansible_env.SUDO_USER }}/.gitconfig backup=yes
   when: overwrite_git_files == "yes"
 
 - name: add .gitignore
-  copy: src=git/git.gitignore dest=/home/{{ ansible_env.SUDO_USER }}/.gitignore backup=yes owner={{ chown_owner }} group={{ chown_group }}
+  copy: src=git/git.gitignore dest=/home/{{ ansible_env.SUDO_USER }}/.gitignore backup=yes
   when: overwrite_git_files == "yes"
 
 - name: add github-config
-  template: src=github-config.sh.j2 dest=/usr/local/bin/{{ github_alias }}-github-config mode=a+x owner={{ chown_owner }} group={{ chown_group }}
-
+  template: src=github-config.sh.j2 dest=/usr/local/bin/{{ github_alias }}-github-config mode=a+x

@@ -1,7 +1,6 @@
 ---
 - name: add deb-encrypt
-  copy: src=crypto/encrypt.sh dest=/usr/local/bin/{{ github_alias }}-deb-encrypt mode=a+x backup=yes owner={{ chown_owner }} group={{ chown_group }}
+  copy: src=crypto/encrypt.sh dest=/usr/local/bin/deb-encrypt mode=a+x force=no
 
 - name: add deb-decrypt
-  copy: src=crypto/decrypt.sh dest=/usr/local/bin/{{ github_alias }}-deb-decrypt mode=a+x backup=yes owner={{ chown_owner }} group={{ chown_group }}
-
+  copy: src=crypto/decrypt.sh dest=/usr/local/bin/deb-decrypt mode=a+x force=no
