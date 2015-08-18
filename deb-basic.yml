@@ -18,10 +18,8 @@
     - files
     - basic-files
 
-  vars_prompt:
-    - name: "overwrite_bashrc_files"
-      prompt: "Overwrite ~/.bash[rc _*] (yes or ENTER to skip)?"
-      private: no
+  vars:
+    - overwrite_bashrc_files: "no"
   
   roles:
    - deb-basic-files

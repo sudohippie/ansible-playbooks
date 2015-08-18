@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=IntelliJ IDEA
+Exec=/opt/jetbrains-intellij/bin/idea.sh
+Icon=/opt/jetbrains-intellij/bin/idea.png
+Comment=The most intelligent Java IDE
+Type=Application
+Terminal=false
+NoDisplay=false
+Categories=Development;IDE;
+Name[en]=IntelliJ IDEA
+Name[en_US]=IntelliJ IDEA
