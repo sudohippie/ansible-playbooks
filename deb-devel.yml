@@ -8,8 +8,5 @@
     - tools
     - devel-tools
   
-  vars_prompt:
-    - overwrite_git_files: "no"
-           
   roles:
     - deb-devel-tools

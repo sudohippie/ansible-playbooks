@@ -6,3 +6,4 @@
           - jq # json parser
           - wireshark
           - curl
+          - freemind
