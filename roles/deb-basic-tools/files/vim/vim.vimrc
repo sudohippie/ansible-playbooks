@@ -2,7 +2,7 @@
 set number
  
 " Adds indentation
-filetype indent on
+filetype indent off
  
 " Add filetype specific features
 filetype plugin on
