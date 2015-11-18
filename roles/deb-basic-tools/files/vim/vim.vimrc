@@ -16,3 +16,6 @@ nmap mm :NERDTreeToggle<CR>
  
 " View binary
 nmap <c-b> :%!xxd
+
+" Make search case in-sensitive, use \C<search> for case sensitivity
+set ignorecase
