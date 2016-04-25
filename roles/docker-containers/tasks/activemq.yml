@@ -1,0 +1,30 @@
+- name: activemq
+  tags:
+    - activemq
+  docker:
+    name: activemq
+    image: webcenter/activemq:5.13.2
+    state: started
+    volumes:
+      - /opt/docker-volumes/activemq/data:/data/activemq
+      - /opt/docker-volumes/activemq/log:/var/log/activemq
+    ports:
+      - 8161:8161
+      - 61616:61616
+      - 61613:61613
+    env:
+      ACTIVEMQ_NAME: amqp-local
+      ACTIVEMQ_REMOVE_DEFAULT_ACCOUNT: true
+      ACTIVEMQ_ADMIN_LOGIN: admin
+      ACTIVEMQ_ADMIN_PASSWORD: admin
+      ACTIVEMQ_WRITE_LOGIN: producer_login
+      ACTIVEMQ_WRITE_PASSWORD: producer_password
+      ACTIVEMQ_READ_LOGIN: consumer_login
+      ACTIVEMQ_READ_PASSWORD: consumer_password
+      ACTIVEMQ_JMX_LOGIN: jmx_login
+      ACTIVEMQ_JMX_PASSWORD: jmx_password
+      ACTIVEMQ_STATIC_TOPICS: test_topic
+      ACTIVEMQ_STATIC_QUEUES: test_queue
+      ACTIVEMQ_MIN_MEMORY: 1024
+      ACTIVEMQ_MAX_MEMORY: 4096
+      ACTIVEMQ_ENABLED_SCHEDULER: true
