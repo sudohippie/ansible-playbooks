@@ -138,6 +138,12 @@ fi
 #		PERSONAL TOUCH               #
 ##############################################
 
+# Make completion, case-insensitive
+if [ ! -a ~/.inputrc ]; then 
+        echo "\$include /etc/inputrc" > ~/.inputrc; 
+        echo "set completion-ignore-case On" >> ~/.inputrc
+fi
+
 # Prompt style
 if [ -f ~/.bash_prompts ]; then
     . ~/.bash_prompts
@@ -146,6 +152,11 @@ fi
 # Exports
 if [ -f ~/.bash_exports ]; then
     . ~/.bash_exports
+fi
+
+# Aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
 fi
 
 # Welcome message 

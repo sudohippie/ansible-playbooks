@@ -1,9 +1,10 @@
-# Some useful aliases
-
+# cd aliases
 alias cddown="cd ~/Downloads"
 alias cddoc="cd ~/Documents"
 alias cdcode="cd ~/Code"
 alias cdh="cd ~"
+
+# tool aliases
 alias rmr="rm -rvf"
 alias histgrep="history | grep"
 alias psgrep="ps aux | grep"
