@@ -9,7 +9,10 @@ alias histgrep="history | grep"
 alias psgrep="ps aux | grep"
 
 # tmux
-alias tmux-new="tmux new -s "
-alias tmux-attach="tmux a -t "
-alias tmux-kill="tmux kill-session -t "
+alias tmux-new="tmux new -s"
+alias tmux-attach="tmux a -t"
+alias tmux-kill="tmux kill-session -t"
 alias tmux-ls="tmux ls"
+
+# ansible
+alias apb="ansible-playbook -t"
