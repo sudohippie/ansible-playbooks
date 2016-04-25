@@ -3,7 +3,7 @@
     - activemq
   docker:
     name: activemq
-    image: webcenter/activemq:5.13.2
+    image: webcenter/activemq:latest
     state: started
     volumes:
       - /opt/docker-volumes/activemq/data:/data/activemq

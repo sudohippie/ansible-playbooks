@@ -1,0 +1,12 @@
+- name: redis
+  tags:
+    - redis
+  docker:
+    name: redis
+    image: redis:latest
+    state: started
+    command: redis-server --appendonly yes #enables, persistence storage
+    ports:
+      - 6379:6379
+    volumes:
+      - /opt/docker-volumes/redis/data:/data
