@@ -16,4 +16,7 @@ alias @tmux-kill="tmux kill-session -t"
 alias @tmux-ls="tmux ls"
 
 # ansible
-alias @ansible-docker="ansible-playbook docker.yml -t"
+alias @docker-deploy="ansible-playbook docker.yml -t"
+
+# docker
+alias @docker-exec-ti="docker exec -ti"
