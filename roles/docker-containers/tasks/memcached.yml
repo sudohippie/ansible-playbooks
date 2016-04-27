@@ -5,5 +5,5 @@
     name: memcached
     image: memcached:latest
     state: started
-  ports:
-    - 11211:11211
+    ports:
+      - 11211:11211

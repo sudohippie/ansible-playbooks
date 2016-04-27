@@ -1,5 +1,5 @@
 ---
-- name: Docker mysql container
+- name: Docker containers
   hosts: local
   roles:
     - docker-containers
