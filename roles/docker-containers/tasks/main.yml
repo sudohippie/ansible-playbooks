@@ -2,4 +2,5 @@
 - include: mysql.yml
 - include: activemq.yml
 - include: redis.yml
+- include: memcached.yml
 - include: ejabberd.yml

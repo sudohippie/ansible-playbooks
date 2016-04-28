@@ -1,0 +1,9 @@
+- name: memcached
+  tags:
+    - memcached
+  docker:
+    name: memcached
+    image: memcached:latest
+    state: started
+    ports:
+      - 11211:11211
