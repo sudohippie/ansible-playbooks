@@ -142,3 +142,4 @@ _testmain.go
 ## IntelliJ ##
 .idea/
 *.project
+*.retry
