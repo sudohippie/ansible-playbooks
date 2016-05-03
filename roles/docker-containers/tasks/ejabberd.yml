@@ -8,41 +8,18 @@
     - ejabberd
   docker:
     name: ejabberd
-    image: rroemhild/ejabberd
+    image: rroemhild/ejabberd:16.04-1
     net: host
     state: started
     volumes:
       - /opt/docker-volumes/ejabberd/ssl:/opt/ejabberd/ssl
       - /opt/docker-volumes/ejabberd/backup:/opt/ejabberd/backup
       - /opt/docker-volumes/ejabberd/upload:/opt/ejabberd/upload
-      # - /opt/docker-volumes/ejabberd/database:/opt/ejabberd/database
+      - /opt/docker-volumes/ejabberd/conf/16.04:/opt/ejabberd/conf:ro
+      - /opt/docker-volumes/ejabberd/module_source:/opt/ejabberd/module_source:ro
+#      - /opt/docker-volumes/ejabberd/database:/opt/ejabberd/database
     ports:
       - 5222:5222 # client
       - 5269:5269 # server2server
       - 5280:5280 # http admin/websocke/http-bind
       - 4560:4560 # xmlrpc
-    env:
-      XMPP_DOMAIN: localhost
-      ERLANG_NODE: ejabberd
-      EJABBERD_ADMINS: admin@localhost
-      EJABBERD_USERS: admin@localhost:admin
-      EJABBERD_MOD_MUC_ADMIN: true
-      EJABBERD_MOD_ADMIN_EXTRA: true
-      EJABBERD_CONFIGURE_ODBC: true
-      EJABBERD_ODBC_TYPE: mysql
-      EJABBERD_ODBC_SERVER: 127.0.0.1
-      EJABBERD_ODBC_DATABASE: ejabberd
-      EJABBERD_ODBC_USERNAME: root
-      EJABBERD_ODBC_PASSWORD: root
-      EJABBERD_ODBC_POOL_SIZE: 5
-      EJABBERD_DEFAULT_DB: odbc
-      EJABBERD_AUTH_METHOD: odbc
-      EJABBERD_SESSION_DB: redis
-      EJABBERD_CONFIGURE_REDIS: true
-      EJABBERD_REDIS_SERVER: 127.0.0.1
-      EJABBERD_REDIS_PORT:  6379
-      EJABBERD_REDIS_PASSWORD: password
-      EJABBERD_REDIS_DB: 0
-      EJABBERD_REDIS_RECONNECT_TIMEOUT: 1
-      EJABBERD_REDIS_CONNECT_TIMEOUT: 1
-      EJABBERD_LOGLEVEL: 4
