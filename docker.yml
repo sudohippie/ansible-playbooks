@@ -1,5 +1,0 @@
----
-- name: Docker containers
-  hosts: local
-  roles:
-    - docker-containers

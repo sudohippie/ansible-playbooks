@@ -1,6 +1,48 @@
-# ansible-playbooks
-Inventory automation using ansible playbooks
+# Ansible Playbooks
+Inventory, tool and configuration management
 
-* Pre-requisites
-Install anisble
+## Getting Started
+
+### Setup ansible
+
+#### Install
+
+[Link](http://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-apt-ubuntu) to installation
+
+#### Configuration
+
+For local usage, edit ```/etc/ansible/hosts``` to contain
+
+```
+[local]
+127.0.0.1
+```
+
+### Setup SSH
+
+#### Install
+
+```
+sudo apt-get update
 sudo apt-get install openssh-server
+```
+
+#### Start
+
+```
+start ssh
+```
+
+## Usage
+
+### Playbooks - all
+
+```
+ansible-playbook <path_to_playbook_yml>
+```
+
+### Playbooks - With tags
+
+```
+ansible-playbook <path_to_playbook_yml> -t [tags]
+```
