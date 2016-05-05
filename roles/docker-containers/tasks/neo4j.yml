@@ -1,0 +1,10 @@
+- name: neo4j
+  tags:
+    - neo4j
+  docker:
+    name: neo4j
+    image: neo4j:3.0.0
+    state: started
+    ports:
+      - 7474:7474
+      - 7687:7687

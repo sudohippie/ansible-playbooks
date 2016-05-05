@@ -5,3 +5,4 @@
 - include: memcached.yml
 - include: ejabberd.yml
 - include: orientdb.yml
+- include: neo4j.yml
