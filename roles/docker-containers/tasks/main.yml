@@ -4,3 +4,4 @@
 - include: redis.yml
 - include: memcached.yml
 - include: ejabberd.yml
+- include: orientdb.yml
