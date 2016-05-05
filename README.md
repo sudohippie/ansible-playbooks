@@ -41,7 +41,7 @@ start ssh
 ansible-playbook <path_to_playbook_yml>
 ```
 
-### Playbooks - With tags
+### Playbooks - with tags
 
 ```
 ansible-playbook <path_to_playbook_yml> -t [tags]
