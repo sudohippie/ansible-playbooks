@@ -1,5 +1,0 @@
----
-- include: others.yml
-- include: vim.yml
-- include: tmux.yml
-- include: git.yml

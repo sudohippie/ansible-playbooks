@@ -1,7 +1,0 @@
----
-- name: install vim
-  apt: pkg=vim state=installed
-
-- name: copy .vimrc
-  copy: src=vim/vim.vimrc dest=/home/{{ ansible_env.SUDO_USER }}/.vimrc backup=yes
-  when: overwrite_vim == "yes"
