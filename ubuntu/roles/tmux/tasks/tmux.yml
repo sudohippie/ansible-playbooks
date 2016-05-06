@@ -3,5 +3,5 @@
   apt: pkg=tmux state=installed
 
 - name: copy .tmux.conf
-  copy: src=tmux.tmux.conf dest=/home/{{ ansible_env.SUDO_USER }}/.tmux.conf backup=yes
+  copy: src=tmux.conf dest=/home/{{ ansible_env.SUDO_USER }}/.tmux.conf backup=yes
   when: overwrite_tmux_conf == "yes"

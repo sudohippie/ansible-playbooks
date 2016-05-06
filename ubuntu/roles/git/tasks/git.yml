@@ -3,9 +3,9 @@
   apt: pkg=git state=installed
 
 - name: copy .gitconfig
-  copy: src=git.gitconfig dest=/home/{{ ansible_env.SUDO_USER }}/.gitconfig backup=yes
+  copy: src=gitconfig dest=/home/{{ ansible_env.SUDO_USER }}/.gitconfig backup=yes
   when: overwrite_git_conf == "yes"
 
 - name: copy .gitignore
-  copy: src=git.gitignore dest=/home/{{ ansible_env.SUDO_USER }}/.gitignore backup=yes
+  copy: src=gitignore dest=/home/{{ ansible_env.SUDO_USER }}/.gitignore backup=yes
   when: overwrite_git_ignore == "yes"
