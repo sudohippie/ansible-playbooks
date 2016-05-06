@@ -35,13 +35,13 @@ start ssh
 
 ## Usage
 
-### Playbooks - all
+### All
 
 ```
 ansible-playbook <path_to_playbook_yml>
 ```
 
-### Playbooks - with tags
+### With tags
 
 ```
 ansible-playbook <path_to_playbook_yml> -t [tags]
