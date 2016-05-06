@@ -1,0 +1,13 @@
+---
+- name: Install for new OS
+  hosts: local
+  sudo: yes
+  pre_tasks:
+    - apt: update_cache=yes
+  roles:
+    - vim
+    - tmux
+    - git
+    - system-utilities
+    - package-managers
+    - bashrc-files
