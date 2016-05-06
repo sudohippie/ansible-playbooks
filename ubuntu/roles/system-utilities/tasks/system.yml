@@ -5,4 +5,3 @@
           - htop
           - sysv-rc-conf # service manager
           - tree
-          - python-pip
