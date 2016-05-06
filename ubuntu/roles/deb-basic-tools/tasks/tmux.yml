@@ -1,7 +1,0 @@
----
-- name: install tmux
-  apt: pkg=tmux state=installed
-
-- name: add .tmux.conf
-  copy: src=tmux/tmux.tmux.conf dest=/home/{{ ansible_env.SUDO_USER }}/.tmux.conf backup=yes
-  when: overwrite_vim_files == "yes"

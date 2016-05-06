@@ -1,3 +1,0 @@
----
-- name: copy intellij.desktop file
-  copy: src=jetbrains/jetbrains-intellij.desktop dest=/usr/share/applications/jetbrains-intellij.desktop mode="u=rw,g=r,o=r"

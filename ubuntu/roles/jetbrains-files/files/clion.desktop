@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=CLion
+Exec=/opt/jetbrains/clion/latest/bin/clion.sh
+Icon=/opt/jetbrains/clion/latest/bin/clion.svg
+Comment=Powerful IDE for C and C++
+Type=Application
+Terminal=false
+NoDisplay=false
+Categories=Development;IDE;

@@ -1,0 +1,7 @@
+---
+- name: install tools like htop, tree ...
+  apt: pkg={{ item }} state=installed
+  with_items:
+          - htop
+          - sysv-rc-conf # service manager
+          - tree

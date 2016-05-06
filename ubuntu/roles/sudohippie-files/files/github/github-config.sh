@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+git config user.name "Raghav Sidhanti"
+git config user.email "sudohippie@users.noreply.github.com"
+git config core.editor "vim"
+git config merge.tool "vimdiff"
+git config color.diff "auto"
+git config color.status "auto"
+git config color.branch "auto"
+git config color.ui "auto"

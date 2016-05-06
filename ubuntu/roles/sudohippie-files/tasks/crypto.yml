@@ -1,0 +1,12 @@
+---
+- name: check if openssl is installed
+  stat: path=/usr/local/openssl
+  register: openssl 
+       
+- name: copy encrypt script
+  when: openssl.stat.exists == True
+  copy: src=crypto/encrypt.sh dest={{ script_dir }}/encrypt mode=ug+x force=no
+
+- name: copy decrypt script
+  when: openssl.stat.exists == True
+  copy: src=crypto/decrypt.sh dest={{ script_dir}}/decrypt mode=ug+x force=no

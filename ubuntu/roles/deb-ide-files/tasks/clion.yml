@@ -1,3 +1,0 @@
----
-- name: copy clion.desktop file
-  copy: src=jetbrains/jetbrains-clion.desktop dest=/usr/share/applications/jetbrains-clion.desktop mode="u=rw,g=r,o=r"

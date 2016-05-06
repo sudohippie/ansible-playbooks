@@ -1,0 +1,4 @@
+---
+- include: intellij.yml
+- include: clion.yml
+- include: pycharm.yml

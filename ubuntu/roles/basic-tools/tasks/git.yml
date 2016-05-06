@@ -1,0 +1,11 @@
+---
+- name: install git
+  apt: pkg=git state=installed
+
+- name: copy .gitconfig
+  copy: src=git/git.gitconfig dest=/home/{{ ansible_env.SUDO_USER }}/.gitconfig backup=yes
+  when: overwrite_git_conf == "yes"
+
+- name: copy .gitignore
+  copy: src=git/git.gitignore dest=/home/{{ ansible_env.SUDO_USER }}/.gitignore backup=yes
+  when: overwrite_git_ignore == "yes"

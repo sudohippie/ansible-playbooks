@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Pycharm
+Exec=/opt/jetbrains/pycharm/latest/bin/pycharm.sh
+Icon=/opt/jetbrains/pycharm/latest/bin/pycharm.png
+Comment=The most intelligent Python IDE
+Type=Application
+Terminal=false
+NoDisplay=false
+Categories=Development;IDE;

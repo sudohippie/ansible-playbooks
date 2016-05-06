@@ -1,5 +1,0 @@
----
-- include: bashrc.yml
-  when: overwrite_bashrc_files == "yes"
-
-- include: crypto.yml
