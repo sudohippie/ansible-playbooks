@@ -2,5 +2,5 @@
 - name: Docker images
   hosts: local
   roles:
-    - hub-images
-    - file-images
+    - dockerhub-images
+    - dockerfile-images
