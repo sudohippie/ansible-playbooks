@@ -1,14 +1,18 @@
-- name: copy {{ image_name }} Dockerfile
+- name: remove old {{ image_name }} Dockerfile
+  file: >
+    path=/tmp/{{ image_name }}
+    state=absent
+
+- name: copy new {{ image_name }} Dockerfile
   copy: >
-    src={{ image_name }}/Dockerfile
-    dest=/tmp/Dockerfile
-    force=yes
+    src={{ image_name }}
+    dest=/tmp
 
 - name: build {{ image_name }} image
   docker_image: >
     name=sudohippie/{{ image_name }}
     tag=latest
-    path=/tmp
+    path=/tmp/{{ image_name }}
     state=present
 
 - name: "{{ image_name }}"
