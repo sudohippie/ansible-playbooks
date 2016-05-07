@@ -13,7 +13,7 @@
     name=sudohippie/{{ image_name }}
     tag=latest
     path=/tmp/{{ image_name }}
-    state=present
+    state=build
 
 - name: "{{ image_name }}"
   docker:
