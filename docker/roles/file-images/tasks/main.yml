@@ -1,3 +1,5 @@
 ---
-- include: ansible-simple.yml
-  tags: ansible-simple
+- include: ansible.yml
+  tags: ansible
+  vars:
+    image_name: ansible
