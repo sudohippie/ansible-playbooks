@@ -1,0 +1,18 @@
+- name: download Dockerfile
+  get_url: >
+    url=https://raw.githubusercontent.com/sudohippie/dockerfiles/master/ansible-simple/Dockerfile
+    dest=/tmp/Dockerfile-ansible-simple
+    force=yes
+
+- name: build image
+  docker_image: >
+    name=sudohippie/ansible-simple
+    tag=latest
+    dockerfile=/tmp/Dockerfile-ansible-simple
+    state=present
+
+- name: ansible-simple
+  docker:
+    name: ansible-simple
+    image: sudohippie/ansible-simple
+    state: started
