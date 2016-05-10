@@ -3,11 +3,6 @@
 - include: activemq.yml
 - include: redis.yml
 - include: memcached.yml
-- include: ejabberd/ejabberd_1602.yml
-  vars:
-    version: 16.02
-- include: ejabberd/ejabberd_1604.yml
-  vars:
-    version: 16.04
 - include: orientdb.yml
 - include: neo4j.yml
+- include: ejabberd/main.yml
