@@ -1,0 +1,27 @@
+# Mysql schema must exist prior to running this container.
+# $ wget https://raw.githubusercontent.com/processone/ejabberd/master/sql/mysql.sql
+# $ mysql -h 127.0.0.1 -uroot -proot -e "CREATE DATABASE ejabberd;"
+# $ mysql -h 127.0.0.1 -uroot -proot -D ejabberd < mysql.sql
+
+- name: ejabberd_{{ version }}
+  tags:
+    - ejabberd_{{ version }}
+  docker:
+    name: ejabberd_{{ version }}
+    image: rroemhild/ejabberd:{{ version }}
+    net: host
+    state: started
+    volumes:
+      - /opt/docker-volumes/ejabberd/ssl:/opt/ejabberd/ssl
+      - /opt/docker-volumes/ejabberd/backup:/opt/ejabberd/backup
+      - /opt/docker-volumes/ejabberd/upload:/opt/ejabberd/upload
+      - /opt/docker-volumes/ejabberd/conf/{{ version }}:/opt/ejabberd/conf:ro
+      - /opt/docker-volumes/ejabberd/module_source:/opt/ejabberd/module_source:ro
+#      - /opt/docker-volumes/ejabberd/database:/opt/ejabberd/database
+    ports:
+      - 5222:5222 # client
+      - 5269:5269 # server2server
+      - 5280:5280 # http admin/websocke/http-bind
+      - 4560:4560 # xmlrpc
+#    env:
+#      EJABBERD_USERS: admin@localhost:admin
