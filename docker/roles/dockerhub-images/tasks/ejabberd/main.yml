@@ -2,6 +2,9 @@
 - include: ejabberd_1602.yml
   vars:
     version: 16.02
+- include: ejabberd_1603.yml
+  vars:
+    version: 16.03
 - include: ejabberd_1604.yml
   vars:
     version: 16.04

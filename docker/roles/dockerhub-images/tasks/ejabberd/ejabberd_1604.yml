@@ -3,6 +3,14 @@
 # $ mysql -h 127.0.0.1 -uroot -proot -e "CREATE DATABASE ejabberd;"
 # $ mysql -h 127.0.0.1 -uroot -proot -D ejabberd < mysql.sql
 
+- name: remove ejabberd_{{ version }}
+  tags:
+    - ejabberd_{{ version }}
+  docker:
+    name: ejabberd_{{ version }}
+    image: rroemhild/ejabberd:{{ version }}
+    state: absent
+
 - name: ejabberd_{{ version }}
   tags:
     - ejabberd_{{ version }}
