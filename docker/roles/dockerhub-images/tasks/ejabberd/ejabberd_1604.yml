@@ -23,5 +23,6 @@
       - 5269:5269 # server2server
       - 5280:5280 # http admin/websocke/http-bind
       - 4560:4560 # xmlrpc
-#    env:
+    env:
+      EJABBERD_SOURCE_MODULES: mod_muc_preview
 #      EJABBERD_USERS: admin@localhost:admin

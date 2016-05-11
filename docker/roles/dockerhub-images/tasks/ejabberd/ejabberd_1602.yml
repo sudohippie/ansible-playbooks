@@ -8,7 +8,7 @@
     - ejabberd_{{ version }}
   docker:
     name: ejabberd_{{ version }}
-    image: rroemhild/ejabberd:{{ version }}-2
+    image: rroemhild/ejabberd:{{ version }}
     net: host
     state: started
     volumes:
