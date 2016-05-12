@@ -3,20 +3,29 @@
 # $ mysql -h 127.0.0.1 -uroot -proot -e "CREATE DATABASE ejabberd;"
 # $ mysql -h 127.0.0.1 -uroot -proot -D ejabberd < mysql.sql
 
+- name: git checkout ejabberd_{{ version }}
+  git: >
+    repo=https://github.com/sudohippie/docker-ejabberd.git
+    dest=/tmp/docker-ejabberd
+    version=maint-16.02
+
 - name: remove ejabberd_{{ version }}
-  tags:
-    - ejabberd_{{ version }}
   docker:
     name: ejabberd_{{ version }}
-    image: rroemhild/ejabberd:{{ version }}
+    image: sudohippie/ejabberd:{{ version }}
     state: absent
 
+- name: build ejabberd_{{ version }}
+  docker_image: >
+    name=sudohippie/ejabberd
+    tag=16.02
+    path=/tmp/docker-ejabberd
+    state=build
+
 - name: ejabberd_{{ version }}
-  tags:
-    - ejabberd_{{ version }}
   docker:
     name: ejabberd_{{ version }}
-    image: rroemhild/ejabberd:{{ version }}
+    image: sudohippie/ejabberd:{{ version }}
     net: host
     state: started
     volumes:

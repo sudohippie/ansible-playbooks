@@ -1,5 +1,7 @@
 ---
 - include: ejabberd_1602.yml
+  tags:
+    - ejabberd_16.02
   vars:
     version: 16.02
 - include: ejabberd_1603.yml
