@@ -1,6 +1,0 @@
----
-overwrite_bash_exports: "no"
-overwrite_bash_aliases: "no"
-overwrite_bash_prompts: "no"
-overwrite_bashrc: "no"
-overwrite_inputrc: "no"

@@ -1,0 +1,20 @@
+---
+- name: copy .bash_exports
+  copy: src=bash/bash_exports dest=/home/{{ ansible_env.SUDO_USER }}/.bash_exports backup=yes
+  when: overwrite_bash_exports == "true"
+
+- name: copy .bash_aliases
+  copy: src=bash/bash_aliases dest=/home/{{ ansible_env.SUDO_USER }}/.bash_aliases backup=yes
+  when: overwrite_bash_aliases == "true"
+
+- name: copy .bash_prompts
+  copy: src=bash/bash_prompts dest=/home/{{ ansible_env.SUDO_USER }}/.bash_prompts backup=yes
+  when: overwrite_bash_prompts == "true"
+
+- name: copy .inputrc
+  copy: src=bash/inputrc dest=/home/{{ ansible_env.SUDO_USER }}/.inputrc backup=yes
+  when: overwrite_bash_inputrc == "true"
+
+- name: copy .bashrc
+  copy: src=bash/bashrc dest=/home/{{ ansible_env.SUDO_USER }}/.bashrc backup=yes
+  when: overwrite_bash_bashrc == "true"

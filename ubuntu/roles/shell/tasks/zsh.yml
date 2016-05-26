@@ -1,0 +1,19 @@
+---
+- name: install zsh
+  apt: pkg=zsh state=installed
+
+- name: install oh-my-zsh pre-requisites
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - git
+    - curl
+
+- name: install oh-my-zsh
+  shell: sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+- name: copy sudohippie zsh theme
+  copy: >
+    src=zsh/sudohippie.zsh-theme
+    dest=/home/{{ ansible_env.SUDO_USER }}/.oh-my-zsh/themes/sudohippie.zsh-theme
+    backup=yes
+  when: overwrite_zsh_theme == "true"

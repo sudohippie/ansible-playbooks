@@ -10,4 +10,4 @@
     - git
     - system-utilities
     - package-managers
-    - bashrc-files
+    - {role: shell, shell_type: 'none'}

@@ -1,0 +1,13 @@
+---
+- include: bash.yml
+  when: shell_type == "bash"
+  vars:
+    overwrite_bash_exports: "false"
+    overwrite_bash_aliases: "false"
+    overwrite_bash_prompts: "false"
+    overwrite_bashrc: "false"
+    overwrite_inputrc: "false"
+- include: zsh.yml
+  when: shell_type == "zsh"
+  vars:
+    overwrite_zsh_theme: "false"

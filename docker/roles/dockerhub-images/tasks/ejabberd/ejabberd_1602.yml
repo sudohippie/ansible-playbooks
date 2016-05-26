@@ -18,7 +18,7 @@
 - name: build ejabberd_{{ version }}
   docker_image: >
     name=sudohippie/ejabberd
-    tag=16.02
+    tag='{{ version }}'
     path=/tmp/docker-ejabberd
     state=build
 
