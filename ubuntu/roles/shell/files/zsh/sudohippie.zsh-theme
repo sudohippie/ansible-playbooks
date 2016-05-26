@@ -1,49 +1,54 @@
+# Local variables
+local green="%{$fg[green]%}"
+local blue="%{$fg[blue]%}"
+local yellow="%{$fg[yellow]%}"
+local red="%{$fg[red]%}"
+local cyan="%{$fg[cyan]%}"
+local white="%{$fg[white]%}"
+local purple="%{\033[0;35m%}"
+local reset="%{$reset_color%}"
+local bold="%{$terminfo[bold]%}"
+
+# Git info.
+ZSH_THEME_GIT_PROMPT_PREFIX="\n  ${blue}- git:%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="${reset}"
+ZSH_THEME_GIT_PROMPT_DIRTY=" ${red}x"
+ZSH_THEME_GIT_PROMPT_CLEAN=" ${green}✓"
+
 # Machine name.
 function host_name {
     [ -f ~/.box-name ] && cat ~/.box-name || echo $HOST
 }
 
 # Directory info.
-local current_dir='${PWD/#$HOME/~}'
-
-# Git info.
-ZSH_THEME_GIT_PROMPT_PREFIX="\n  %{$fg[blue]%}-%{$fg[yellow]%} git%{$fg[white]%}:%{$fg[yellow]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY=" %{$reset_color%}[%{$fg[red]%}x%{$reset_color%}]"
-ZSH_THEME_GIT_PROMPT_CLEAN=" %{$reset_color%}[%{$fg[green]%}✓%{$reset_color%}]"
-
-# NVM info
-local nvm_info='$(nvm_prompt_info)'
-ZSH_THEME_NVM_PROMPT_PREFIX="%{$fg[green]%}⬢ "
-ZSH_THEME_NVM_PROMPT_SUFFIX=""
-
-# meta info
-local meta_info='$(meta_prompt_info)'
-meta_prompt_info() {
+local current_dir_name='${PWD/#$HOME/~}'
+local current_dir_info='$(current_dir_prompt_info)'
+function current_dir_prompt_info {
 	git_prompt_info
 }
 
-# Prompt format: \n # USER at MACHINE in DIRECTORY on git:BRANCH STATE [TIME] \n $
+#############################################
+#                   PROMPT
+#############################################
+# Main prompt: normal user
 PROMPT="
-%{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
-%{$fg[cyan]%}%n \
-%{$fg[white]%}in \
-%{$fg[yellow]%}${current_dir}%{$reset_color%}\
-${meta_info} 
-%{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
+${bold}${blue}#${reset} \
+${cyan}%n \
+${white}in \
+${yellow}${current_dir_name}${reset} \
+${current_dir_info}
+${bold}${red}$ ${reset}"
 
+# Main prompt: root user
 if [[ "$USER" == "root" ]]; then
 PROMPT="
-%{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
-%{$bg[yellow]%}%{$fg[cyan]%}%n%{$reset_color%} \
-%{$fg[white]%}at \
-%{$fg[green]%}$(host_name) \
-%{$fg[white]%}in \
-%{$terminfo[bold]$fg[yellow]%}${current_dir}%{$reset_color%}\
-${meta_info}
-%{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
+${bold}${blue}# \
+${cyan}%n \
+${white}in \
+${yellow}${current_dir_name}${reset} \
+${current_dir_info}
+${bold}${red}$ ${reset}"
 fi
 
-RPROMPT="${nvm_info}%{$reset_color%}"
-# %{$fg[white]%}at \
-# %{$fg[green]%}$(host_name) \
+# Right prompt: all users
+# RPROMPT="Something on the right"
