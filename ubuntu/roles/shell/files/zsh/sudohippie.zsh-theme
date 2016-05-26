@@ -8,7 +8,7 @@ local current_dir='${PWD/#$HOME/~}'
 
 # Git info.
 ZSH_THEME_GIT_PROMPT_PREFIX="\n  %{$fg[blue]%}-%{$fg[yellow]%} git%{$fg[white]%}:%{$fg[yellow]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="\n%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$reset_color%}[%{$fg[red]%}x%{$reset_color%}]"
 ZSH_THEME_GIT_PROMPT_CLEAN=" %{$reset_color%}[%{$fg[green]%}✓%{$reset_color%}]"
 
