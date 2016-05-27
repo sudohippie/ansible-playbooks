@@ -1,15 +1,40 @@
 [user]
-	name = Raghav sidhanti
+	name = Raghav Sidhanti
 	email = sudohippie@users.noreply.github.com
+
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
+
 [merge]
 	tool = vimdiff
-[color]
-	diff = auto
-        status = auto
-        branch = auto
-        ui = auto
+
 [push]
 	default = simple
+
+[color]
+	diff = auto
+    status = auto
+    branch = auto
+    ui = auto
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    plain = white
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red blink
+
+[color "status"]
+    added = blue
+    changed = yellow
+    untracked = cyan
+
+[alias]
+    log2 = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %C(blue)[%cr by %an]%Creset %s' --abbrev-commit

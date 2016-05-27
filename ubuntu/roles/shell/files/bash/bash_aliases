@@ -22,4 +22,3 @@ alias @docker-exec-ti="docker exec -ti"
 # usefuls - uncomment before using
 # alias @backup-file='echo "Started at: `date +%FT%H:%M:%S.%N`" && rsync -avh --progress --stats --log-file=/tmp/rsync.log <src_dir> <dst_dir> && echo "Ended at: `date +%FT%H:%M:%S.%N`"'
 # alias @mount-vol='sudo mount -t cifs //<host_name>/<vol_name> /mnt/<host_name>/<vol_name> -o user=<login_username>,gid=<grp_name>,uid=<owner_name>'
-
