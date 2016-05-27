@@ -19,10 +19,6 @@ alias @tmux-ls="tmux ls"
 alias @docker-deploy="ansible-playbook <path>/all-images.yml -t"
 alias @docker-exec-ti="docker exec -ti"
 
-# git
-alias @git-log="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
-
 # usefuls - uncomment before using
 # alias @backup-file='echo "Started at: `date +%FT%H:%M:%S.%N`" && rsync -avh --progress --stats --log-file=/tmp/rsync.log <src_dir> <dst_dir> && echo "Ended at: `date +%FT%H:%M:%S.%N`"'
 # alias @mount-vol='sudo mount -t cifs //<host_name>/<vol_name> /mnt/<host_name>/<vol_name> -o user=<login_username>,gid=<grp_name>,uid=<owner_name>'
-
