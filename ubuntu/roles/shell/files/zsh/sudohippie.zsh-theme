@@ -8,6 +8,7 @@ local white="%{$fg[white]%}"
 local purple="%{\033[0;35m%}"
 local reset="%{$reset_color%}"
 local bold="%{$terminfo[bold]%}"
+local italic="%{\e[3m%}"
 local dirty=" ${red}✘"
 local clean=" ${green}✔"
 
