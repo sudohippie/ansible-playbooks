@@ -1,0 +1,9 @@
+---
+- name: install sqlite3
+  apt: pkg={{item}} state=installed
+  with_items:
+    - libsqlite3-dev
+    - sqlite3
+
+- name: copy .sqliterc
+- copy: src=sqlite3/sqliterc dest=/home/{{ ansible_env.SUDO_USER }}/.sqliterc backup=yes
