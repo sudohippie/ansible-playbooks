@@ -37,4 +37,4 @@
     untracked = cyan
 
 [alias]
-    log2 = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %C(blue)[%cr by %an]%Creset %s' --abbrev-commit
+    log2 = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %C(blue)[%cr by %an]%Creset' --abbrev-commit
