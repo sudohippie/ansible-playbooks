@@ -5,7 +5,7 @@ alias @cdcode="cd ~/Code"
 alias @cdh="cd ~"
 
 # tool aliases
-alias @rmr="rm -rvf"
+alias @rmr="rm -rvfI"
 alias @histgrep="history | grep"
 alias @psgrep="ps aux | grep"
 
