@@ -22,7 +22,7 @@ alias @docker-exec-ti="docker exec -ti"
 # network
 alias @net-dnslookup="dig +short -x"
 alias @net-whois="whois -H"
-alias @net-tcp="netstat -ptnW"
+alias @net-conn="netstat -tupnW"
 
 # usefuls - uncomment before using
 # alias @backup-file='echo "Started at: `date +%FT%H:%M:%S.%N`" && rsync -avh --progress --stats --log-file=/tmp/rsync.log <src_dir> <dst_dir> && echo "Ended at: `date +%FT%H:%M:%S.%N`"'
