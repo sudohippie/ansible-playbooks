@@ -1,25 +1,25 @@
 [user]
-	name = Raghav Sidhanti
-	email = sudohippie@users.noreply.github.com
+    name = Raghav Sidhanti
+    email = sudohippie@users.noreply.github.com
 
 [core]
-	editor = vim
-	excludesfile = ~/.gitignore
+    editor = vim
+    excludesfile = ~/.gitignore
 
 [merge]
-	tool = vimdiff
+    tool = vimdiff
 
 [push]
-	default = simple
+    default = simple
 
 [color]
-	diff = auto
+    diff = auto
     status = auto
     branch = auto
     ui = auto
 
 [color "branch"]
-    current = yellow reverse
+    current = yellow
     local = yellow
     remote = green
 
