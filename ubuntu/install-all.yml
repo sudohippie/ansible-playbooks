@@ -11,3 +11,4 @@
     - system-utilities
     - package-managers
     - {role: shell, shell_type: 'none'}
+    - network
