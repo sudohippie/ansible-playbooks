@@ -23,7 +23,9 @@ alias @docker-exec-ti="docker exec -ti"
 alias @net-dnslookup="dig +short -x"
 alias @net-whois="whois -H"
 alias @net-connections="netstat -tupnWo"
+alias @net-watch-connections="watch netstat -tupnWo"
 alias @net-listens="netstat -tulpnWo"
+alias @net-lsof="sudo lsof -i" #eg: @net-lsof :portNumber, @net-lsof tcp@ip:port
 
 # usefuls - uncomment before using
 # alias @backup-file='echo "Started at: `date +%FT%H:%M:%S.%N`" && rsync -avh --progress --stats --log-file=/tmp/rsync.log <src_dir> <dst_dir> && echo "Ended at: `date +%FT%H:%M:%S.%N`"'
