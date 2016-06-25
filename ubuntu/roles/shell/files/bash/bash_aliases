@@ -22,7 +22,7 @@ alias @docker-exec-ti="docker exec -ti"
 # network
 alias @net-dnslookup="dig +short -x"
 alias @net-whois="whois -H"
-alias @net-connections="watch netstat -tupnWo"
+alias @net-connections="netstat -tupnWo"
 alias @net-listens="netstat -tulpnWo"
 
 # usefuls - uncomment before using
