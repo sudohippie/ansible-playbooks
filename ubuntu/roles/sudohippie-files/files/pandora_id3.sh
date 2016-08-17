@@ -26,3 +26,4 @@ bash $TMP_FILE
 
 # cleanup
 rm $TMP_FILE
+rm ${TMP_FILE}e
