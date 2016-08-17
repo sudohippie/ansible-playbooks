@@ -17,8 +17,8 @@ fi
 ls -1 | grep $AUDIO_FORMAT | awk -F ' - ' '{print "id3tool -r \""$1"\" -a \""$2"\" -t \""$3"\" `"$0"`"}' > $TMP_FILE
 
 # modify data
-sed -i 's/.mp4"/"/g' $TMP_FILE
-sed -i 's/`/"/g' $TMP_FILE
+sed -ie 's/.mp4"/"/g' $TMP_FILE
+sed -ie 's/`/"/g' $TMP_FILE
 
 # execute
 chmod +x $TMP_FILE
