@@ -4,11 +4,11 @@ TMP_FILE="$(pwd)/tmp_id3.sh"
 AUDIO_FORMAT=".mp4"
 
 # make sure the files are in the right format
-BAD_FILE_FORMATS=$(ls | grep ".* - .* - .* - ") 
-if [ -n "$BAD_FILE_FORMATS" ];
+BAD_FILE_NAMES=$(ls | grep ".* - .* - .* - ") 
+if [ -n "$BAD_FILE_NAMES" ];
 then
-	echo -e "MANUAL ACTION REQUIRED: Fix the following file formats:\n"
-	echo "$BAD_FILE_FORMATS"
+	echo -e "MANUAL ACTION REQUIRED: Fix the following file names:\n"
+	echo "$BAD_FILE_NAMES"
 	echo -e "\nNo changes were made to file ID3 tags."
 	exit 0
 fi
