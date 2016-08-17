@@ -14,7 +14,7 @@ then
 fi
 
 # create executable
-ls -1 | grep $AUDIO_FORMAT | awk -F ' - ' '{print "id3 -a \""$1"\" -A \""$2"\" -t \""$3"\" `"$0"`"}' >> $TMP_FILE
+ls -1 | grep $AUDIO_FORMAT | awk -F ' - ' '{print "id3 -a \""$1"\" -A \""$2"\" -t \""$3"\" `"$0"`"}' > $TMP_FILE
 
 # modify data
 sed -i 's/.mp4"/"/g' $TMP_FILE
