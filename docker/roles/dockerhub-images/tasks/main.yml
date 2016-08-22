@@ -6,3 +6,4 @@
 - include: orientdb.yml
 - include: neo4j.yml
 - include: ejabberd/main.yml
+- include: netdata.yml
